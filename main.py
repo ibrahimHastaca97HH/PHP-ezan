@@ -64,6 +64,10 @@ def fetch_prayer_times(city_id):
             })
     return prayer_times
 
+@app.route('/')
+def home():
+    return jsonify({"message": "Ezan API is running"}), 200
+
 @app.route('/api/ezan', methods=['GET'])
 def get_prayer_times():
     city = request.args.get('city', '')
